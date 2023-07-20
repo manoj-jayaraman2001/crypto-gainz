@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import { Navbar, Main } from "./components";
+import { Navbar, Home, Cryptocurrencies, Exchanges, News } from "./components";
 import "./App.css";
 
 function App() {
@@ -12,7 +12,12 @@ function App() {
           <Navbar />
         </div>
         <div className="main">
-          <Main />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+            <Route path="/exchanges" element={<Exchanges />} />
+            <Route path="/news" element={<News />} />
+          </Routes>
         </div>
       </div>
       <div className="footer"></div>
