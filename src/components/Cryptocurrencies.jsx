@@ -1,20 +1,50 @@
 import millify from "millify";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useGetCryptosQuery } from "../services/createApi";
-import { Card, CardContent, Typography, CardActionArea } from "@mui/material";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import {
+  Card,
+  CardContent,
+  Typography,
+  CardActionArea,
+  InputAdornment,
+  TextField,
+} from "@mui/material";
+import { ArrowDropUp, ArrowDropDown, Search } from "@mui/icons-material";
+import NoResultsFound from "./NoResults";
 import "../styles/cryptocurrencies.css";
+import Loading from "./Loading";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
-  const { data, isFetching } = useGetCryptosQuery();
-  const cryptoCoins = data?.data?.coins;
+  const { data, isFetching } = useGetCryptosQuery(count);
+  const [cryptoCoins, setcryptoCoins] = useState(data?.data?.coins);
+  const [searchCoin, setSearchCoin] = useState("");
+
+  useEffect(() => {
+    const filteredResults = data?.data?.coins.filter((coin) =>
+      coin.name.toLowerCase().includes(searchCoin.toLowerCase())
+    );
+    setcryptoCoins(filteredResults);
+  }, [data, searchCoin]);
+
+  ;
+
+  const NoResultComponent = ()=>{
+    if (isFetching) return <Loading />
+    if (cryptoCoins?.length === 0) return <NoResultsFound/>
+    return (<Loading />)
+  }
 
   return (
     <div className="crypto-container">
-      <div className="coin-grid">
-        {cryptoCoins.map((currency, Index) => {
+      {!simplified && (
+        <div className="search-box">
+          <SearchField onChange={(value) => {setSearchCoin(value);}}/>
+        </div>
+      )}
+      {cryptoCoins?.length > 0 ? (
+        <div className="coin-grid">
+        {cryptoCoins?.map((currency, Index) => {
           return (
             <CurrencyCard
               key={Index}
@@ -28,6 +58,8 @@ const Cryptocurrencies = ({ simplified }) => {
           );
         })}
       </div>
+      ) : (<div className="no-result"><NoResultComponent/></div>)}
+      
     </div>
   );
 };
@@ -36,6 +68,7 @@ export default Cryptocurrencies;
 
 // ---------------Child Components---------------//
 
+// Card Component
 const CurrencyCard = ({ id, name, imgUrl, price, marketCap, dailyChange }) => {
   const fonts = { Lato: "Lato , sans-serif", Karla: "Karla, sans-serif" };
   return (
@@ -83,14 +116,42 @@ const CurrencyCard = ({ id, name, imgUrl, price, marketCap, dailyChange }) => {
                 {dailyChange}%
               </Typography>
               {dailyChange > 0 ? (
-                <ArrowDropUpIcon sx={{ color: "green", fontSize: 30 }} />
+                <ArrowDropUp sx={{ color: "green", fontSize: 30 }} />
               ) : (
-                <ArrowDropDownIcon sx={{ color: "red", fontSize: "2em" }} />
+                <ArrowDropDown sx={{ color: "red", fontSize: "2em" }} />
               )}
             </div>
           </div>
         </CardContent>
       </CardActionArea>
     </Card>
+  );
+};
+
+// search field from MUI
+const SearchField = ({ onChange }) => {
+  const handleChange = (event) => {
+    if (onChange) {
+      onChange(event.target.value);
+    }
+  };
+
+  return (
+    <TextField
+      sx={{ background: "white" }}
+      variant="outlined"
+      fullWidth
+      placeholder="Search Cryptocurrencies"
+      autoFocus
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <Search sx={{ color: "#24252D" }} />
+          </InputAdornment>
+        ),
+      }}
+      onChange={handleChange}
+      size="small"
+    />
   );
 };

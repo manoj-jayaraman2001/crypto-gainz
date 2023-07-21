@@ -1,5 +1,4 @@
 import { Paper, Grid, Typography } from "@mui/material";
-import { Icon } from "@mui/material";
 import "../styles/home.css";
 import { useGetCryptosQuery } from "../services/createApi";
 import {BsGraphUpArrow, BsCurrencyExchange} from 'react-icons/bs'
@@ -8,12 +7,14 @@ import {Tb24Hours} from 'react-icons/tb'
 import {GiWorld, GiMoneyStack} from 'react-icons/gi'
 import millify from "millify";
 import {Cryptocurrencies, News} from "../components";
+import Loading from "./Loading";
+
+
 
 const Home = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats
-
-  if (isFetching) return 'Loading ...'
+  if (isFetching) return (<Loading/>)
   return (
     <div className="home-container">
       <h2>Global Crypto Stats</h2>
@@ -25,12 +26,12 @@ const Home = () => {
         <StatisticCard title="Total Markets" value={globalStats.totalMarkets} icon={<GiWorld className="icon"/>} />
       </div>
       <div className="home-heading-container">
-        <h3>Top 10 Crypto Currencies in the world</h3>
+        <h2>Top 10 Crypto Currencies in the world</h2>
         <Link to='/cryptocurrencies'>View More</Link>
       </div>
       <Cryptocurrencies simplified/>
       <div className="home-heading-container">
-        <h3>Latest Crypto News</h3>
+        <h2>Latest Crypto News</h2>
         <Link to='/news'>View More</Link>
       </div>
       <News simplified/>
