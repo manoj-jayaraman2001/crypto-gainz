@@ -1,0 +1,44 @@
+
+
+.coin-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  
+}
+
+/* -------- coin-card-styles-------- */
+.root {
+  min-width: 150x;
+  max-width: 350px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+}
+.icon {
+  height: 30px;
+  width: 30px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+@media (min-width: 574px) {
+    .coin-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 912px) {
+    .coin-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1024px) {
+    .coin-grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

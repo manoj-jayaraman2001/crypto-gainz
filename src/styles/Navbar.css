@@ -101,7 +101,11 @@ body{
         align-items: baseline;
 
     }
+    .menuItem{
+        width: 100%;
+    }
     .nav-container{
+        min-width: 25%;
         height: 100vh;
     }
 }

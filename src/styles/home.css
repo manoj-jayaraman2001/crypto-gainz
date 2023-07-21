@@ -1,0 +1,46 @@
+
+/*-------- stats-------- */
+.home-container > h2{
+    font-family: 'Lato', 'sans-serif';
+    letter-spacing: 1.1px;
+}
+.card-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.icon{
+    color: #FF630B;
+
+}
+
+
+@media (min-width: 574px){
+    .card-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1024px){
+    .card-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+
+/* Home Content */
+
+.home-heading-container{
+    display: flex;
+    align-items: center;
+    font-family: 'Karla','sans-serif';
+    gap: 40px;
+}
+
+.home-heading-container > a{
+    text-decoration: none;
+    font-weight: 600;
+}
+.home-heading-container a:hover{
+    text-decoration: underline;
+}

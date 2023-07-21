@@ -11,9 +11,11 @@
 
 .main {
   width: 100%;
-  height: 100vh;
-  background-color: #f7f7f7;
+  height: 95vh;
+  background-color: #f4f3ee;
   border-radius: 10.5px;
+  padding: 10px 40px;
+  overflow-y: scroll;
 }
 
 @media (min-width: 756px) {
@@ -23,5 +25,4 @@
   .navbar {
     min-width: 200px;
   }
-  
 }
