@@ -1,6 +1,6 @@
 import millify from "millify";
 import { useState, useEffect } from "react";
-import { useGetCryptosQuery } from "../services/createApi";
+import { useGetCryptosQuery } from "../services/cryptoApi";
 import {
   Card,
   CardContent,

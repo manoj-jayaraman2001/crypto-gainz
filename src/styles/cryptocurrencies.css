@@ -1,4 +1,6 @@
-
+.crypto-container{
+  height: 100%;
+}
 .search-box{
   width: 70%;
   margin: 20px auto;
@@ -8,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 80%;
 }
 
 .coin-grid {

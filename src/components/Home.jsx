@@ -1,6 +1,6 @@
 import { Paper, Grid, Typography } from "@mui/material";
 import "../styles/home.css";
-import { useGetCryptosQuery } from "../services/createApi";
+import { useGetCryptosQuery } from "../services/cryptoApi";
 import {BsGraphUpArrow, BsCurrencyExchange} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import {Tb24Hours} from 'react-icons/tb'
