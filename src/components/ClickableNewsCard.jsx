@@ -40,7 +40,7 @@ const ClickableNewsCard = ({
   const truncatedDescription = newsDescription.substring(0, 100);
 
   return (
-    <Card sx={{ maxWidth: 500, minWidth: 150 }}>
+    <Card sx={{ maxWidth: 570, minWidth: 150 }}>
       <CardActionArea
         component="a"
         href={newsUrl}

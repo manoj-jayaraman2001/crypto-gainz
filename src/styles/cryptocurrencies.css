@@ -17,13 +17,13 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* -------- coin-card-styles-------- */
 .root {
   min-width: 150px;
-  max-width: 350px;
+  max-width: 370px;
 }
 
 .card-top {

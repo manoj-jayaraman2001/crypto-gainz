@@ -1,7 +1,7 @@
 import React from 'react';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+import Box from '@mui/material/Box';
 
 const NoResultsFound = () => {
   return (
