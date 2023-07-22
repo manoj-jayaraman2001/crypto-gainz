@@ -35,7 +35,7 @@ const Navbar = () => {
     <div className="nav-container">
       <div className="logo-section">
         <img src={icon} alt="crypto logo" />
-        <p>Crypto Gainz</p>
+        <p>Cryptopedia</p>
       </div>
       <div className={`menu ${isMenuOpen ? "mobActive" : ""}`} ref={menuRef}>
         <NavLink

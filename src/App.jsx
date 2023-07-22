@@ -20,7 +20,12 @@ function App() {
           </Routes>
         </div>
       </div>
-      <div className="footer"></div>
+      <div className="footer">
+        <p>
+          &copy; {new Date().getFullYear()} Cryptopedia | Developed by: Manoj
+          Jayaraman
+        </p>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,47 @@
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr ;
+  gap: 20px;
+  font-size: 14px;
+  margin: 10px;
+}
+
+/* Mobile Styles */
+@media (max-width: 374px) {
+    .news-img {
+      display: none;
+    }
+  }
+  
+  /* Tablet Portrait and Small Laptop Styles */
+  @media (min-width: 618px) and (max-width: 755px) {
+    .news-grid {
+      grid-template-columns: 1fr 1fr;
+      font-size: 13.5px;
+    }
+  }
+  
+  /* Tablet Landscape Styles */
+  @media (min-width: 750px) and (max-width: 849px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+      font-size: 16px;
+    }
+  }
+  
+  /* Desktop Styles */
+  @media (min-width: 850px) and (max-width: 1175px) {
+    .news-grid {
+      grid-template-columns: 1fr 1fr;
+      font-size: 13px;
+    }
+  }
+  
+  /* Large Desktop Styles */
+  @media (min-width: 1176px) {
+    .news-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      font-size: 15px;
+    }
+  }
+  

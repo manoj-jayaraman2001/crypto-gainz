@@ -12,12 +12,12 @@
     height: 150px;
     border-radius: 150px;
     box-shadow: 0 6px 0 #FF630B inset;
-    animation: rotate-360 0.75s linear infinite;
+    animation: rotate-360 0.5s linear infinite;
   }
   
   .loader-ring-track {
     border-radius: 150px;
-    box-shadow: 0 0 1px 1px #24252D inset;
+    box-shadow: 0 0 1px 1px gray inset;
   }
   
   @keyframes rotate-360 {
