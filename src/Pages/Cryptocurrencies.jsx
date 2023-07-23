@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import CurrencyCard from "./CurrencyCard";
-import SearchField from "./SearchField";
-import NoResultsFound from "./NoResults";
+import CurrencyCard from "../components/CurrencyCard";
+import SearchField from "../components/SearchField";
+import NoResultsFound from "../components/NoResults";
 import "../styles/cryptocurrencies.css";
-import Loading from "./Loading";
+import Loading from "../components/Loading";
+import FallbackError from "../components/FallBackError";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
-  const { data, isFetching } = useGetCryptosQuery(count);
+  const { data, isFetching, error } = useGetCryptosQuery(count);
   const [cryptoCoins, setcryptoCoins] = useState(data?.data?.coins);
   const [searchCoin, setSearchCoin] = useState("");
 
@@ -21,6 +22,7 @@ const Cryptocurrencies = ({ simplified }) => {
 
   const NoResultComponent = () => {
     if (isFetching) return <Loading />;
+    if (error) return <FallbackError/>;
     if (cryptoCoins?.length === 0) return <NoResultsFound />;
     return <Loading />;
   };

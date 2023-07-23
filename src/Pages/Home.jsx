@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 import { Tb24Hours } from "react-icons/tb";
 import { GiWorld, GiMoneyStack } from "react-icons/gi";
 import millify from "millify";
-import { Cryptocurrencies, News } from "../components";
-import Loading from "./Loading";
+import { Cryptocurrencies, News } from "../Pages";
+import Loading from '../components/Loading';
+import FallbackError from "../components/FallBackError";
 import "../styles/home.css";
 
 const Home = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
+  const { data, isFetching, error} = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
   if (isFetching) return <Loading />;
+  if (error) return <FallbackError/>;
   return (
     <div className="home-container">
       <h2>Global Crypto Stats</h2>

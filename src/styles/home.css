@@ -4,6 +4,7 @@
 .home-container > h2{
     font-family: 'Lato', 'sans-serif';
     letter-spacing: 1.1px;
+    margin-left: 10px;
 }
 .card-grid{
     display: grid;
@@ -38,6 +39,7 @@
     font-family: 'Lato','sans-serif';
     letter-spacing: 1.2px;
     gap: 40px;
+    margin-left: 10px;
 }
 
 .home-heading-container > a{

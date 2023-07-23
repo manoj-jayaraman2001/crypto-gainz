@@ -6,7 +6,7 @@ const CurrencyCard = ({ id, name, imgUrl, price, marketCap, dailyChange }) => {
   const fonts = { Lato: "Lato , sans-serif", Karla: "Karla, sans-serif" };
   return (
     <Card className="root">
-      <CardActionArea>
+      <CardActionArea sx = {{height:'100%' }}>
         <CardContent>
           <div className="card-top">
             <Typography sx={{ fontFamily: fonts.Lato, fontWeight: 600 }}>

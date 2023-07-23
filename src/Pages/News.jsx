@@ -1,20 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
-import ClickableNewsCard from "./ClickableNewsCard";
-import Loading from "./Loading";
+import ClickableNewsCard from "../components/ClickableNewsCard";
+import SelectNewsCategory from "../components/SelectNewsCategory";
+import Loading from "../components/Loading";
 import "../styles/news.css";
+import FallbackError from "../components/FallBackError";
 
 const News = ({ simplified }) => {
-  const [newsCatogery, setCategory] = useState("Cryptocurrency");
-  const { data: cryptoNews, isFetching } = useGetCryptoNewsQuery({
+  const [newsCatogery, setCategory] = useState("Cryptocurrency")
+  const {
+    data: cryptoNews,
+    isFetching,
+    error,
+  } = useGetCryptoNewsQuery({
     Category: newsCatogery,
     count: simplified ? 6 : 14,
   });
 
-  if (!cryptoNews?.value) return <Loading />;
+
+  const NoResultComponent = () => {
+    if (!cryptoNews?.value && !error) return <Loading />;
+    if (isFetching && cryptoNews.value) return <Loading />;
+    if (error) return <FallbackError />;
+  };
+
   return (
     <div>
-      {/* <SelectNewsCategory/>ss */}
+      <div className="category-dropdown">
+        <h3>Browse News By Category:</h3>
+        {!simplified ? <SelectNewsCategory newsCatogery = {newsCatogery} setCategory={setCategory}/> : <></>}
+      </div>
+
+      <NoResultComponent />
       <div className="news-grid">
         {cryptoNews?.value.map((newsObject, Index) => {
           return (

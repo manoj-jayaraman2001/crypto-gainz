@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
-import { Navbar, Home, Cryptocurrencies, Exchanges, News } from "./components";
+import Navbar from "./components/Navbar";
+import {Home, Cryptocurrencies, Exchanges, News } from "./Pages";
 import "./App.css";
 
 function App() {
