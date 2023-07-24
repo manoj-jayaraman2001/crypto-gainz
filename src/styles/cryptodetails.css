@@ -1,0 +1,61 @@
+.coin-heading {
+  display: flex;
+  gap: 20px;
+  font-size: 32px;
+  align-items: center;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+}
+.genric-stats {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  width: fit-content;
+}
+.stat-flex-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.details-container {
+  padding: 20px;
+}
+
+.links{
+   text-align: center;
+   font-family: 'Karla', sans-serif;
+}
+.links-table{
+    padding: 0 40px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border-radius: 12px;
+}
+.link-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 2px solid lightgray;
+    font-size: 20px;
+    padding: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    /* gap: 10px; */
+}
+
+
+
+
+@media(min-width: 412px) {
+    .table-row{
+        font-size: 18.5px;
+        gap: 80px;
+    }
+    
+}
+@media(min-width: 974px){
+    .stat-flex-container{
+        flex-direction: row;
+    }
+}

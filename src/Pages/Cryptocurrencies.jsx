@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import CurrencyCard from "../components/CurrencyCard";
 import SearchField from "../components/SearchField";
@@ -12,7 +13,9 @@ const Cryptocurrencies = ({ simplified }) => {
   const { data, isFetching, error } = useGetCryptosQuery(count);
   const [cryptoCoins, setcryptoCoins] = useState(data?.data?.coins);
   const [searchCoin, setSearchCoin] = useState("");
+  const navigate = useNavigate();
 
+  // navigate to coin details
   useEffect(() => {
     const filteredResults = data?.data?.coins.filter((coin) =>
       coin.name.toLowerCase().includes(searchCoin.toLowerCase())
@@ -22,7 +25,7 @@ const Cryptocurrencies = ({ simplified }) => {
 
   const NoResultComponent = () => {
     if (isFetching) return <Loading />;
-    if (error) return <FallbackError/>;
+    if (error) return <FallbackError />;
     if (cryptoCoins?.length === 0) return <NoResultsFound />;
     return <Loading />;
   };
@@ -42,15 +45,16 @@ const Cryptocurrencies = ({ simplified }) => {
         <div className="coin-grid">
           {cryptoCoins?.map((currency) => {
             return (
-              <CurrencyCard
-                key={currency.uuid}
-                id={currency.rank}
-                name={currency.name}
-                imgUrl={currency.iconUrl}
-                price={currency.price}
-                marketCap={currency.marketCap}
-                dailyChange={currency.change}
-              />
+              <div onClick={()=>{navigate(`/cryptocurrencies/${currency.uuid}`)}} key={currency.uuid}>
+                <CurrencyCard
+                  id={currency.rank}
+                  name={currency.name}
+                  imgUrl={currency.iconUrl}
+                  price={currency.price}
+                  marketCap={currency.marketCap}
+                  dailyChange={currency.change}
+                />
+              </div>
             );
           })}
         </div>

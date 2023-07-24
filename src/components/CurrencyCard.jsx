@@ -2,10 +2,10 @@ import { Card, CardContent, Typography, CardActionArea } from "@mui/material";
 import millify from "millify";
 import { ArrowDropUp, ArrowDropDown } from "@mui/icons-material";
 
-const CurrencyCard = ({ id, name, imgUrl, price, marketCap, dailyChange }) => {
+const CurrencyCard = ({ id, name, imgUrl, price, marketCap, dailyChange, handleClick}) => {
   const fonts = { Lato: "Lato , sans-serif", Karla: "Karla, sans-serif" };
   return (
-    <Card className="root">
+    <Card className="root" onClick = {handleClick}>
       <CardActionArea sx = {{height:'100%' }}>
         <CardContent>
           <div className="card-top">

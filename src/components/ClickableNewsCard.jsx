@@ -16,7 +16,7 @@ const ClickableNewsCard = ({
   newsDescription,
   newsProviderIconUrl,
   newsProviderName,
-  datePublished,
+  datePublished
 }) => {
   // Demo URL in case imageUrl is missing
 

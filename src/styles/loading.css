@@ -1,10 +1,9 @@
 
-  .loader-ring {
+  .loader-ring{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
   }
   
   .loader-ring-light {
