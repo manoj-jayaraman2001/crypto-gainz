@@ -82,7 +82,7 @@ const CryptoDetails = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            marginLeft: 15,
+            alignItems: 'center',
           }}
         >
           <div style={{ fontFamily: "Karla, sans-serif" }}>
@@ -107,7 +107,7 @@ const CryptoDetails = () => {
           </div>
         </div>
         <div className="line-chart-container">
-          {/* {coinHistory ? (
+          {/* {coinHistory.data ? (
             <LineChart
               coinHistory={coinHistory?.data}
               currentPrice={millify(coinInfo?.price)}
@@ -115,13 +115,13 @@ const CryptoDetails = () => {
             />
           ) : (
             <></>
-          )} */}
+          )}  */}
         </div>
       </div>
       <div className="links">
         <h3>{coinInfo?.name} Links</h3>
         <div className="links-table">
-          {coinInfo?.links.map((linkObject) => {
+          {coinInfo?.links?.map((linkObject) => {
             return (
               <div key={linkObject.url} className="link-row">
                 <div>{linkObject.type}</div>

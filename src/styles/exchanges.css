@@ -1,0 +1,40 @@
+
+
+.heading{
+    padding: 5px;
+}
+
+.exchanges-data{
+    padding: 5px;
+}
+
+.exchange-content{
+    font-size: 12px;
+}
+
+@media (max-width: 334px){
+    .exchange-content{
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 412px) and (max-width: 574px) {
+    .exchanges-data{
+        padding: 15px;
+    }
+    .exchange-content{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 575px){
+    .exchange-content{
+        font-size: 16px;
+    }
+    .exchanges-data{
+        padding: 20px;
+    }
+    .heading{
+        padding: 20px;
+        font-size: 16px;
+    }
+}
