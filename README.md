@@ -1,7 +1,7 @@
-# Cryptopedia - Cryptocurrency Information, Live Updates and News
+# Cryptopedia 
 
 
-Cryptopedia is a web application that provides up-to-date information on cryptocurrencies, including current worldwide crypto stats, detailed information about each coin, historical price graphs, latest news, and useful links. It also ranks the top exchanges based on their trading volume.
+Cryptopedia is a web application that provides up-to-date information on cryptocurrencies, including current worldwide crypto stats, detailed information about each coin, historical price graphs, the latest news, and useful links. It also ranks the top exchanges based on their trading volume.
 
 ## Live Demo
 
