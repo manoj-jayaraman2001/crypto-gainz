@@ -7,7 +7,7 @@ import { GiWorld, GiMoneyStack } from "react-icons/gi";
 import millify from "millify";
 import { Cryptocurrencies, News } from "../Pages";
 import Loading from '../components/Loading';
-import FallbackError from "../components/FallBackError";
+import FallbackError from "../components/FallbackError";
 import "../styles/home.css";
 
 const Home = () => {
