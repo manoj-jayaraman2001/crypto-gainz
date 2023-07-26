@@ -25,7 +25,7 @@ Cryptopedia is a web application that provides up-to-date information on cryptoc
 - Material-UI for styling and components
 - Coinranking API for cryptocurrency data
 - Coingecko API for exchange data
-- Bing News Search API for latest news
+- Bing News Search API for the latest news
 
 ## Installation
 
@@ -48,7 +48,7 @@ npm run dev
 ```
 
 ## Usage
--View current worldwide crypto stats on the homepage.
--Search for a specific cryptocurrency to view detailed information, historical price graph, latest news, and useful links.
--Explore the ranking of exchanges based on their trading volume.
+- View current worldwide crypto stats on the homepage.
+- Search for a specific cryptocurrency to view detailed information, historical price graph, latest news, and useful links.
+- Explore the ranking of exchanges based on their trading volume.
 
