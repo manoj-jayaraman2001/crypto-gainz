@@ -1,6 +1,6 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
-const baseUrl = 'https://api.coingecko.com/api/v3'
+const baseUrl = import.meta.env.VITE_CRYPTO_EXCHANGE_API_URL
 
 const createRequest = (url) => (url)
 

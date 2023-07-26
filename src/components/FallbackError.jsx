@@ -1,24 +1,27 @@
-import { Alert, AlertTitle } from "@mui/material";
+import { Alert, AlertTitle, Grid } from "@mui/material";
 
 const styles = {
   root: {
     height: "100vh",
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: '0 20px'
   },
 };
 
 const FallbackError = ({ errorMessage }) => {
   return (
-    <div style={styles.root}>
-      <Alert severity="error" variant="outlined">
-        <AlertTitle>Error</AlertTitle>
-        {errorMessage ||
-          "Something went wrong. Please check your internet connection or try again later."}
-      </Alert>
-    </div>
+    <Grid container style={styles.root}>
+      <Grid item xs={12} md={6}>
+        <Alert severity="error" variant="outlined">
+          <AlertTitle>Error</AlertTitle>
+          {errorMessage ||
+            "Something went wrong. Please check your internet connection or try again later."}
+        </Alert>
+      </Grid>
+    </Grid>
   );
 };
 

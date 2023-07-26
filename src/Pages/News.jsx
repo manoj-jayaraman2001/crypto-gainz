@@ -19,14 +19,13 @@ const News = ({ simplified }) => {
 
   const NoResultComponent = () => {
     if (!cryptoNews?.value && !error) return <Loading />;
-    if (isFetching && cryptoNews.value) return <Loading />;
+    if (isFetching && cryptoNews?.value) return <Loading />;
     if (error) return <FallbackError />;
     return <></>;
   };
 
   return (
     <div>
-      <NoResultComponent />
       <div className="category-dropdown">
         <h3>Browse News By Category:</h3>
         {!simplified ? (
@@ -38,6 +37,7 @@ const News = ({ simplified }) => {
           <></>
         )}
       </div>
+      <NoResultComponent />
       <div className="news-grid">
         {!isFetching &&
           cryptoNews?.value.map((newsObject, Index) => {

@@ -15,9 +15,10 @@ const Exchanges = () => {
     Cookies.set("cookie1", "value1", { sameSite: "Lax" });
     Cookies.set("cookie2", "value2", { sameSite: "None", secure: true });
   }, []);
-
-  if (!exchanges) return <Loading />;
+  
   if (error) return <FallbackError />;
+  if (!exchanges) return <Loading />;
+  
   return (
     <div>
       <div className="heading">
