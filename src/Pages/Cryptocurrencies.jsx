@@ -6,7 +6,7 @@ import SearchField from "../components/SearchField";
 import NoResultsFound from "../components/NoResults";
 import "../styles/cryptocurrencies.css";
 import Loading from "../components/Loading";
-import FallbackError from "../components/FallBackError";
+import FallbackError from '../components/FallbackError';
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
