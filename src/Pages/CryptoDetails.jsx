@@ -20,7 +20,7 @@ import { Select, MenuItem } from "@mui/material";
 // ----------------------------------//
 import millify from "millify";
 import Loading from "../components/Loading";
-import FallbackError from "../components/FallBackError";
+import FallbackError from "../components/FallbackError";
 import "../styles/cryptodetails.css";
 import "../styles/home.css";
 import StatisticCard from "../components/StatisticCard";
