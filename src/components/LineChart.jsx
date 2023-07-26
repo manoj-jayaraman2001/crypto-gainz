@@ -10,7 +10,6 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
-  console.log(coinHistory);
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -20,7 +19,6 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     Tooltip,
     Legend
   );
-  // console.log(coinHistory)
   const coinPriceList = [];
   const timeStamps = [];
 
