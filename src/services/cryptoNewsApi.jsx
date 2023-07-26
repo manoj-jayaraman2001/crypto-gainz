@@ -1,4 +1,4 @@
-// https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News
+
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 

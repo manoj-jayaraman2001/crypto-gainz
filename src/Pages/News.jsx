@@ -20,7 +20,7 @@ const News = ({ simplified }) => {
   const NoResultComponent = () => {
     if (!cryptoNews?.value && !error) return <Loading />;
     if (isFetching && cryptoNews?.value) return <Loading />;
-    if (error) return <FallbackError />;
+    if (error) { return <FallbackError />};
     return <></>;
   };
 

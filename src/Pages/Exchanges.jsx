@@ -15,10 +15,12 @@ const Exchanges = () => {
     Cookies.set("cookie1", "value1", { sameSite: "Lax" });
     Cookies.set("cookie2", "value2", { sameSite: "None", secure: true });
   }, []);
-  
-  if (error) return <FallbackError />;
+
+  if (error) {
+    return <FallbackError />;
+  }
   if (!exchanges) return <Loading />;
-  
+
   return (
     <div>
       <div className="heading">
@@ -31,7 +33,7 @@ const Exchanges = () => {
           description={""}
           url={""}
           bold={true}
-          isDisabled = {true}
+          isDisabled={true}
         />
       </div>
       <div className="exchanges-data">
@@ -48,7 +50,7 @@ const Exchanges = () => {
                 description={exchangeObject.description}
                 url={exchangeObject.url}
                 bold={false}
-                isDisabled = {false}
+                isDisabled={false}
               />
             );
           })
