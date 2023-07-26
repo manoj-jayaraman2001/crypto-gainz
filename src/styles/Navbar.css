@@ -61,13 +61,17 @@ body {
   font-size: 18px;
   transition: background-color 0.3s ease;
 }
+/* Apply styles to the .active class */
 .active {
   /* background-color: #4a4c59; */
   color: #ff630b;
-  .icon {
-    color: #ff630b;
-  }
 }
+
+/* Apply styles to the .icon element within .active */
+.active .icon {
+  color: #ff630b;
+}
+
 .menuItem:hover {
   background-color: #4a4c59;
 }
