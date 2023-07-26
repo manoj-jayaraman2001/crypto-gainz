@@ -1,10 +1,9 @@
 import { useGetCryptoExchangesQuery } from "../services/cryptoExchangesApi";
 import Loading from "../components/Loading";
-import FallbackError from "../components/FallBackError";
+import FallbackError from "../components/FallbackError";
 import ExchangeComponent from "../components/ExhangeComponent";
 import millify from "millify";
 import { useEffect } from "react";
-import { Grid, Typography } from "@mui/material";
 import "../styles/exchanges.css";
 import Cookies from "js-cookie";
 const Exchanges = () => {

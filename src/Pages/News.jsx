@@ -4,7 +4,7 @@ import ClickableNewsCard from "../components/ClickableNewsCard";
 import SelectNewsCategory from "../components/SelectNewsCategory";
 import Loading from "../components/Loading";
 import "../styles/news.css";
-import FallbackError from "../components/FallBackError";
+import FallbackError from "../components/FallbackError";
 
 const News = ({ simplified }) => {
   const [newsCatogery, setCategory] = useState("Cryptocurrency");
