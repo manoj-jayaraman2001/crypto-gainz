@@ -16,7 +16,7 @@ import {
 import { FaFileInvoiceDollar, FaTrophy } from "react-icons/fa";
 import { RiFundsFill } from "react-icons/ri";
 import { GiRank3 } from "react-icons/gi";
-
+import { Select, MenuItem } from "@mui/material";
 // ----------------------------------//
 import millify from "millify";
 import Loading from "../components/Loading";
@@ -37,11 +37,10 @@ const CryptoDetails = () => {
     data: coinHistory,
     isFetching: isHistoryFetching,
     error: HistoryError,
-  } = useGetCryptoHistoryQuery({ coinId: coinId, timePeriod: timePeriod });
+  } = useGetCryptoHistoryQuery({ coinId, timePeriod });
 
   const coinInfo = data?.data?.coin;
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
-  console.log(coinInfo);
   const StatsArray = coinInfo ? stats(coinInfo) : [];
   const GenricArray = coinInfo ? genericStats(coinInfo) : [];
 
@@ -82,7 +81,7 @@ const CryptoDetails = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: 'center',
+            alignItems: "center",
           }}
         >
           <div style={{ fontFamily: "Karla, sans-serif" }}>
@@ -107,15 +106,29 @@ const CryptoDetails = () => {
           </div>
         </div>
         <div className="line-chart-container">
-          {/* {coinHistory.data ? (
-            <LineChart
-              coinHistory={coinHistory?.data}
-              currentPrice={millify(coinInfo?.price)}
-              coinName={coinInfo?.name}
-            />
-          ) : (
-            <></>
-          )}  */}
+          <div className="duration-dropdown">
+            <Select
+              value={timePeriod}
+              onChange={(e) => setTimePeriod(e.target.value)}
+            >
+              {time.map((item) => (
+                <MenuItem key={item} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
+            </Select>
+          </div>
+          <div className="line-chart">
+            {coinHistory.data ? (
+              <LineChart
+                coinHistory={coinHistory?.data}
+                currentPrice={millify(coinInfo?.price)}
+                coinName={coinInfo?.name}
+              />
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
       </div>
       <div className="links">

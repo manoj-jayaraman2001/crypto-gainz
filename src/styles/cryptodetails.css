@@ -17,6 +17,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    padding: 10px;
 }
 .details-container {
   padding: 20px;
@@ -44,8 +46,27 @@
     /* gap: 10px; */
 }
 
-
-
+.line-chart-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-family: 'Karla', sans-serif;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    overflow-x: scroll;
+}
+.duration-dropdown{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.line-chart{
+    text-align: center;
+    
+  
+}
 
 @media(min-width: 412px) {
     .table-row{

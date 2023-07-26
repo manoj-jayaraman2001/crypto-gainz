@@ -1,8 +1,63 @@
-
-
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
+  console.log(coinHistory);
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+  // console.log(coinHistory)
+  const coinPriceList = [];
+  const timeStamps = [];
 
-    
+  coinHistory?.history?.forEach((historyObject) => {
+    if (historyObject.price) {
+      coinPriceList.unshift(Number(historyObject.price));
+      timeStamps.unshift(
+        new Date(historyObject.timestamp * 1000).toLocaleDateString()
+      );
+    }
+  });
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Chart.js Line Chart",
+      },
+    },
+  };
+  const data = {
+    labels: timeStamps,
+    datasets: [
+      {
+        label: `${coinName} Price in USD`,
+        data: coinPriceList,
+        borderColor: "rgb(75, 192, 192)",
+        backgroundColor: "blue",
+        borderWidth: 1,
+        pointRadius: 0,
+      },
+    ],
+  };
+
   return (
     <>
       <div className="chart-header">
@@ -18,7 +73,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           </h3>
         </div>
       </div>
-      {/* {labels && coinPrice && <Line data={data} options={options} />} */}
+      {coinPriceList && <Line data={data} options={options} />}
     </>
   );
 };
